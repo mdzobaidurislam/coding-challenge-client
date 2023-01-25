@@ -39,7 +39,7 @@ const AllTask = ({ dataList }) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const url = `http://localhost:8000/api/task/${id}`;
+          const url = `${env.baseUrl}/api/task/${id}`;
           const { data } = await axios.delete(url, {
             headers: {
               Authorization: `Bearer ${JSON.parse(
