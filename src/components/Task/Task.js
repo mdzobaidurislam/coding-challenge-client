@@ -104,9 +104,7 @@ const Task = () => {
                 Please enter your name and pick the Sectors you are currently
                 involved in.
               </h4>
-              <div>
-                <Link to="/task">Check All task</Link>
-              </div>
+
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
                   Name
@@ -133,7 +131,7 @@ const Task = () => {
                     id="sectors"
                     className="form-control"
                     multiple={true}
-                    size="6"
+                    size="4"
                     {...register("sectorsName", {
                       required: "Select a sectors",
                     })}
@@ -166,13 +164,7 @@ const Task = () => {
                   <div className="text-danger">{errors.agree.message}</div>
                 )}
               </div>
-              <div className="mb-3 mt-3">
-                {/* <Button
-                  type="submit"
-                  className="btn btn-outline-secondary btn-lg lg-w-25"
-                >
-                  {loading ? "Loading..." : "Save"}
-                </Button> */}
+              <div className="mb-3 mt-3 d-flex justify-content-between">
                 <Button
                   type="submit"
                   variant="outline-secondary"
@@ -181,6 +173,7 @@ const Task = () => {
                 >
                   {loading ? "Loading..." : "Save"}
                 </Button>
+                <Link to="/task">Check All task</Link>
               </div>
             </form>
           </div>
