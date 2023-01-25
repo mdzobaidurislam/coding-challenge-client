@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={
             <RequireAdmin>
@@ -25,8 +25,10 @@ function App() {
           <Route path="/" element={<AllTask />} />
           <Route path="/task" element={<Task />} />
           <Route path="/task/:id" element={<EditTask />} />
-        </Route>
-
+        </Route> */}
+        <Route path="/" element={<Task />} />
+        <Route path="/task" element={<AllTask />} />
+        <Route path="/task/:id" element={<EditTask />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
