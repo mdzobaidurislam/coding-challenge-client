@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import AllTask from "./AllTask";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { env } from "../../env";
+import { Link } from "react-router-dom";
 
 const Task = () => {
   const [loading, setSetloading] = useState(false);
@@ -103,6 +104,9 @@ const Task = () => {
                 Please enter your name and pick the Sectors you are currently
                 involved in.
               </h4>
+              <div>
+                <Link to="/task">Check All task</Link>
+              </div>
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
                   Name

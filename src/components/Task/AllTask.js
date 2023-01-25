@@ -69,59 +69,64 @@ const AllTask = ({ dataList }) => {
           </div>
         </div>
       ) : (
-        <Table responsive hover>
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Sectors</th>
-              <th scope="col">Agree</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {datas &&
-              datas.map((item, index) => (
-                <tr key={item._id}>
-                  <th scope="row" key={item._id}>
-                    {index + 1}
-                  </th>
-                  <td>{item.name}</td>
-                  <td>
-                    {item.sector.length > 0
-                      ? item.sector.map((item, i) => (
-                          <span
-                            key={item.sectorId._id}
-                            className="badge bg-secondary m-2"
-                          >
-                            {item.sectorId.name}
-                          </span>
-                        ))
-                      : "No"}
-                  </td>
-                  <td>
-                    {item.agree ? (
-                      <span className="badge bg-success m-2">Active</span>
-                    ) : (
-                      <span className="badge bg-warning m-2">In Active</span>
-                    )}
-                  </td>
-                  <td>
-                    <Link to={`/task/${item._id}`} className="btn btn-light ">
-                      Edit
-                    </Link>
-                    <Button
-                      type="button"
-                      className="btn btn-dark"
-                      onClick={() => handleDelete(item._id)}
-                    >
-                      Delete
-                    </Button>
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </Table>
+        <>
+          <div>
+            <Link to="/">Back</Link>
+          </div>
+          <Table responsive hover>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Sectors</th>
+                <th scope="col">Agree</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {datas &&
+                datas.map((item, index) => (
+                  <tr key={item._id}>
+                    <th scope="row" key={item._id}>
+                      {index + 1}
+                    </th>
+                    <td>{item.name}</td>
+                    <td>
+                      {item.sector.length > 0
+                        ? item.sector.map((item, i) => (
+                            <span
+                              key={item.sectorId._id}
+                              className="badge bg-secondary m-2"
+                            >
+                              {item.sectorId.name}
+                            </span>
+                          ))
+                        : "No"}
+                    </td>
+                    <td>
+                      {item.agree ? (
+                        <span className="badge bg-success m-2">Active</span>
+                      ) : (
+                        <span className="badge bg-warning m-2">In Active</span>
+                      )}
+                    </td>
+                    <td>
+                      <Link to={`/task/${item._id}`} className="btn btn-light ">
+                        Edit
+                      </Link>
+                      <Button
+                        type="button"
+                        className="btn btn-dark"
+                        onClick={() => handleDelete(item._id)}
+                      >
+                        Delete
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </Table>
+        </>
       )}
     </Container>
   );
